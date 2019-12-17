@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Loader from './Loader';
 import CommentCard from './CommentCard';
-import { setComments } from '../redux/actions/comments';
+import CommentForm from './CommentForm';
+import { setCommentsForConcert } from '../redux/actions/comments';
 
 class CommentList extends React.Component {
 	state = {
@@ -12,14 +13,20 @@ class CommentList extends React.Component {
 	}
 
 	fetchComments() {
-		if (typeof this.props.activeConcertId !== 'number') { return; }
+		const { activeConcertId } = this.props;
+
+		if (typeof activeConcertId !== 'number') { return; }
+
+		const commentList = this.props.commentMap[activeConcertId];
+
+		if (commentList && commentList.length > 0) { return; }
 
 		this.setState({ isLoading: true });
 
-		fetch(`/data/comments/${this.props.activeConcertId}.json`)
+		fetch(`/data/comments/${activeConcertId}.json`)
 			.then(response => response.json())
 			.then((comments) => {
-				this.props.setComments(comments);
+				this.props.setCommentsForConcert(activeConcertId, comments);
 
 				this.setState({ isLoading: false });
 			});
@@ -44,9 +51,13 @@ class CommentList extends React.Component {
 	}
 
 	renderContent() {
-		return this.props.commentList.map(comment => (
-			<CommentCard key={comment.id} comment={comment} />
-		));
+		const comments = this.props.commentMap[this.props.activeConcertId];
+
+		return comments
+			? comments.map(comment => (
+				<CommentCard key={comment.id} comment={comment} />
+			))
+			: null;
 	}
 
 	renderWithLoadingIndicator() {
@@ -58,6 +69,8 @@ class CommentList extends React.Component {
 			<>
 				{this.renderHeader()}
 
+				<CommentForm />
+
 				{this.renderWithLoadingIndicator()}
 			</>
 		);
@@ -66,15 +79,15 @@ class CommentList extends React.Component {
 
 CommentList.propTypes = {
 	activeConcertId: PropTypes.number,
-	setComments: PropTypes.func.isRequired,
-	commentList: PropTypes.arrayOf(PropTypes.object).isRequired,
+	commentMap: PropTypes.object.isRequired,
+	setCommentsForConcert: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-	commentList: state.comments.commentList,
+	commentMap: state.comments.commentMap,
 	activeConcertId: state.concerts.activeConcertId,
 });
 
-const mapDispatchToProps = { setComments };
+const mapDispatchToProps = { setCommentsForConcert };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentList);
