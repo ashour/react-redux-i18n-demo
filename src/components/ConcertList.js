@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Columns from 'react-bulma-components/lib/components/columns';
 import Section from 'react-bulma-components/lib/components/section';
-import Progress from 'react-bulma-components/lib/components/progress';
+import Loader from './Loader';
+import CommentList from './CommentList';
 import ConcertCard from './ConcertCard';
 import ConcertListHeader from './ConcertListHeader';
 import { setConcerts } from '../redux/actions/concerts';
@@ -28,18 +29,6 @@ class ConcertList extends Component {
 			.find(({ id }) => id === this.props.activeConcertId);
 	}
 
-	renderLoading() {
-		return (
-			<Section>
-				<p className="is-size-6 has-text-centered mb-one-half">
-					Loading
-				</p>
-
-				<Progress max={100} size="small" />
-			</Section>
-		);
-	}
-
 	renderActiveConcert() {
 		const activeConcert = this.getActiveConcert();
 
@@ -59,17 +48,19 @@ class ConcertList extends Component {
 					</Columns.Column>
 
 					<Columns.Column>
-						<p>Comments</p>
+						<CommentList />
 					</Columns.Column>
 				</Columns>
 			</Section>
 		);
 	}
 
+	renderWithLoadingIndicator() {
+		return this.state.isLoading ? <Loader /> : this.renderContent();
+	}
+
 	render() {
-		return this.state.isLoading ?
-			this.renderLoading() :
-			this.renderContent();
+		return this.renderWithLoadingIndicator();
 	}
 }
 

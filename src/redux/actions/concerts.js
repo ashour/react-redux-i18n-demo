@@ -7,7 +7,7 @@ import {
 export function setConcerts(newConcerts) {
 	return {
 		type: SET_CONCERTS,
-		payload: { concertList: newConcerts },
+		payload: { concertList: [...newConcerts] },
 	};
 }
 

@@ -1,0 +1,18 @@
+[
+	{
+		"id": 11,
+		"concertId": 1,
+		"userName": "Howard Lee",
+		"profileImageUrl": "https://randomuser.me/api/portraits/women/6.jpg",
+		"commentedOn": "2019-12-22",
+		"text": "The last show I saw of his was so sick! I can't wait for this one. Going fo sho!"
+	},
+	{
+		"id": 12,
+		"concertId": 1,
+		"userName": "Amilia Luna",
+		"profileImageUrl": "https://randomuser.me/api/portraits/women/54.jpg",
+		"commentedOn": "2019-12-21",
+		"text": "¡Amo a Madeon! ¡Nos vemos allí!"
+	}
+]
