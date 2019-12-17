@@ -1,38 +1,36 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import Card from 'react-bulma-components/lib/components/card';
 import Media from 'react-bulma-components/lib/components/media';
 import Content from 'react-bulma-components/lib/components/content';
 import Heading from 'react-bulma-components/lib/components/heading';
 
-class ConcertCard extends Component {
-	render() {
-		const { title, occursOn, description, imageUrl } = this.props.concert;
+function ConcertCard(props) {
+	const { title, occursOn, description, imageUrl } = props.concert;
 
-		return (
-			<Card>
-				<Card.Content>
-					<Media>
-						<Media.Item>
-							<Heading size={4}>{title}</Heading>
+	return (
+		<Card>
+			<Card.Content>
+				<Media>
+					<Media.Item>
+						<Heading size={4}>{title}</Heading>
 
-							<Heading subtitle size={6}>
-								<span>Happening</span>
-								{' '}
-								{occursOn}
-							</Heading>
-						</Media.Item>
-					</Media>
+						<Heading subtitle size={6}>
+							<span>Happening</span>
+							{' '}
+							{occursOn}
+						</Heading>
+					</Media.Item>
+				</Media>
 
-					<Content>
-						<p>{description}</p>
-					</Content>
-				</Card.Content>
+				<Content>
+					<p>{description}</p>
+				</Content>
+			</Card.Content>
 
-				<Card.Image src={imageUrl} />
-			</Card>
-		);
-	}
+			<Card.Image src={imageUrl} />
+		</Card>
+	);
 }
 
 ConcertCard.propTypes = {

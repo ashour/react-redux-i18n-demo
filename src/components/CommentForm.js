@@ -59,9 +59,10 @@ class CommentForm extends Component {
 		return (
 			<Box>
 				<Field>
-					<Label>Add a comment</Label>
+					<Label htmlFor="text">Add a comment</Label>
 
 					<Textarea
+						id="text"
 						rows={2}
 						value={this.state.text}
 						onChange={this.handleTextChange}

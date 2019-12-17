@@ -1,5 +1,6 @@
 import React from 'react';
 import AppBar from './AppBar';
+import AppFooter from './AppFooter';
 import ConcertList from './ConcertList';
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
 			<AppBar />
 
 			<ConcertList />
+
+			<AppFooter />
 		</>
 	);
 }
