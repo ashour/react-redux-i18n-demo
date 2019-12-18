@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Columns from 'react-bulma-components/lib/components/columns';
 import Section from 'react-bulma-components/lib/components/section';
-import Loader from './Loader';
-import CommentList from './CommentList';
+import Loader from '../UI/Loader';
+import CommentList from '../Comments/CommentList';
 import ConcertCard from './ConcertCard';
 import ConcertListHeader from './ConcertListHeader';
-import { setConcerts } from '../redux/actions/concerts';
+import { setConcerts } from '../../redux/actions/concerts';
 
 class ConcertList extends Component {
 	state = {

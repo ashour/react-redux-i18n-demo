@@ -2,7 +2,7 @@ import React from "react";
 import Icon from 'react-bulma-components/lib/components/icon';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 import './AppBar.sass';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '../UI/LanguageSwitcher';
 
 class AppBar extends React.Component {
 	state = {

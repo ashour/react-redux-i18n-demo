@@ -6,7 +6,7 @@ import Icon from 'react-bulma-components/lib/components/icon';
 import Level from 'react-bulma-components/lib/components/level';
 import Button from 'react-bulma-components/lib/components/button';
 import Heading from 'react-bulma-components/lib/components/heading';
-import { goToNextConcert, goToPrevConcert } from '../redux/actions/concerts';
+import { goToNextConcert, goToPrevConcert } from '../../redux/actions/concerts';
 
 class ConcertListHeader extends Component {
 	handleNextButtonClicked = (e) => {

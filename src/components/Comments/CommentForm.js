@@ -9,7 +9,7 @@ import {
 import Box from 'react-bulma-components/lib/components/box';
 import Button from 'react-bulma-components/lib/components/button';
 import Columns from 'react-bulma-components/lib/components/columns';
-import { prependCommentForConcert } from '../redux/actions/comments';
+import { prependCommentForConcert } from '../../redux/actions/comments';
 
 class CommentForm extends Component {
 	state = {

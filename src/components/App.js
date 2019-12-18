@@ -1,7 +1,7 @@
 import React from 'react';
-import AppBar from './AppBar';
-import AppFooter from './AppFooter';
-import ConcertList from './ConcertList';
+import AppBar from './Layout/AppBar';
+import AppFooter from './Layout/AppFooter';
+import ConcertList from './Concerts/ConcertList';
 
 function App() {
 	return (

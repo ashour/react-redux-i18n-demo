@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Heading from 'react-bulma-components/lib/components/heading';
-import Loader from './Loader';
+import Loader from '../UI/Loader';
 import CommentCard from './CommentCard';
 import CommentForm from './CommentForm';
-import { setCommentsForConcert } from '../redux/actions/comments';
+import { setCommentsForConcert } from '../../redux/actions/comments';
 
 class CommentList extends React.Component {
 	state = {
