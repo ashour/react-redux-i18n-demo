@@ -1,4 +1,4 @@
-## Demo App for Phrase Blog React Redux i18n Article
+## [COMPLETED] Demo App for Phrase Blog React Redux i18n Article
 
 This is a companion demo app for a [Phrase blog](https://phrase.com/blog)
 article.
