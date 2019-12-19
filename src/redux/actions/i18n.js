@@ -6,13 +6,5 @@ export function setLocaleWithFallback(desiredLocale) {
     ? desiredLocale
     : fallbackLocale;
 
-  return (dispatch, getState) => {
-    const currentLocale = getState().i18n.locale;
-
-    if (currentLocale === finalLocale) {
-      return;
-    }
-
-    return dispatch(setLocale(finalLocale));
-  };
+  return dispatch => dispatch(setLocale(finalLocale));
 }
