@@ -3,6 +3,9 @@
 body
 	background-color: $background
 
+.title, .subtitle
+	text-align: left
+
 .mt-1
 	margin-top: 1rem
 
@@ -14,3 +17,24 @@ body
 
 .justify-right
 	justify-content: right
+
+[dir="rtl"]
+	.is-flipped-rtl
+		transform: scaleX(-1)
+
+	.justify-right
+		justify-content: left
+
+	.title, .subtitle
+		text-align: right
+
+	.navbar-burger, .navbar-end
+		margin-left: 0
+		margin-right: auto
+
+	.media-left
+		margin-right: 0
+		margin-left: 1rem
+
+	.media-content
+		text-align: right

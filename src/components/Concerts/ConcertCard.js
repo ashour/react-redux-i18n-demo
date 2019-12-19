@@ -15,9 +15,11 @@ function ConcertCard(props) {
       <Card.Content>
         <Media>
           <Media.Item>
-            <Heading size={4}>{title}</Heading>
+            <Heading size={4} renderAs="h2">
+              {title}
+            </Heading>
 
-            <Heading subtitle size={6}>
+            <Heading subtitle size={6} renderAs="h3">
               <Tag color="primary">
                 <Localize value={occursOn} dateFormat="date.long" />
               </Tag>

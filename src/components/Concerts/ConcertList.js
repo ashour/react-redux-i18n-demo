@@ -4,8 +4,8 @@ import React, { Component } from "react";
 import Columns from "react-bulma-components/lib/components/columns";
 import Section from "react-bulma-components/lib/components/section";
 import Loader from "../UI/Loader";
-import CommentList from "../Comments/CommentList";
 import ConcertCard from "./ConcertCard";
+import CommentList from "../Comments/CommentList";
 import ConcertListHeader from "./ConcertListHeader";
 import { setConcerts } from "../../redux/actions/concerts";
 
@@ -14,14 +14,25 @@ class ConcertList extends Component {
     isLoading: true,
   };
 
-  componentDidMount() {
-    fetch("/data/concerts.json")
+  fetchConcerts() {
+    fetch(`/data/concerts/${this.props.locale}.json`)
       .then(response => response.json())
       .then(concerts => {
         this.props.setConcerts(concerts);
-
         this.setState({ isLoading: false });
       });
+  }
+
+  componentDidMount() {
+    this.fetchConcerts();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.locale === this.props.locale) {
+      return;
+    }
+
+    this.fetchConcerts();
   }
 
   getActiveConcert() {
@@ -63,11 +74,13 @@ class ConcertList extends Component {
 
 ConcertList.propTypes = {
   activeConcertId: PropTypes.number,
+  locale: PropTypes.string.isRequired,
   setConcerts: PropTypes.func.isRequired,
   concertList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({
+  locale: state.i18n.locale,
   concertList: state.concerts.concertList,
   activeConcertId: state.concerts.activeConcertId,
 });

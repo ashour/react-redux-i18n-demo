@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import React, { Component } from "react";
+import { Translate } from "react-redux-i18n";
 import {
   Field,
   Label,
@@ -63,7 +64,9 @@ class CommentForm extends Component {
     return (
       <Box>
         <Field>
-          <Label htmlFor="text">Add a comment</Label>
+          <Label htmlFor="text">
+            <Translate value="comment_form.label" />
+          </Label>
 
           <Textarea
             id="text"
@@ -81,7 +84,7 @@ class CommentForm extends Component {
                   disabled={this.isEmpty()}
                   onClick={this.postComment}
                 >
-                  Post
+                  <Translate value="comment_form.button" />
                 </Button>
               </Columns.Column>
             </Columns>

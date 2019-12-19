@@ -1,4 +1,5 @@
 import React from "react";
+import { Translate } from "react-redux-i18n";
 import Icon from "react-bulma-components/lib/components/icon";
 import Navbar from "react-bulma-components/lib/components/navbar";
 import "./AppBar.sass";
@@ -20,7 +21,9 @@ class AppBar extends React.Component {
           <Icon size="medium">
             <span className="fas fa-podcast fa-lg" />
           </Icon>{" "}
-          <span className="AppBar__Name">Showdux</span>
+          <span className="AppBar__Name">
+            <Translate value="app.title" />
+          </span>
         </Navbar.Item>
 
         <Navbar.Burger onClick={onHamburgerClicked} />

@@ -33,13 +33,13 @@ class ConcertListHeader extends Component {
     return (
       <>
         <Button onClick={this.handlePrevButtonClicked}>
-          <Icon>
+          <Icon className="is-flipped-rtl">
             <span className="fas fa-chevron-left fa-lg" />
           </Icon>
         </Button>
 
         <Button onClick={this.handleNextButtonClicked}>
-          <Icon>
+          <Icon className="is-flipped-rtl">
             <span className="fas fa-chevron-right fa-lg" />
           </Icon>
         </Button>
