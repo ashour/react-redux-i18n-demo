@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Translate } from "react-redux-i18n";
 import Heading from "react-bulma-components/lib/components/heading";
 import Loader from "../UI/Loader";
 import CommentCard from "./CommentCard";
@@ -55,7 +56,10 @@ class CommentList extends React.Component {
 
     return (
       <Heading subtitle size={4} renderAs="h3">
-        {comments ? comments.length : 0} comments
+        <Translate
+          value="comments.title"
+          count={comments ? comments.length : 0}
+        />
       </Heading>
     );
   }

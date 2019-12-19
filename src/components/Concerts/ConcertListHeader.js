@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import React, { Component } from "react";
+import { Translate } from "react-redux-i18n";
 import Tag from "react-bulma-components/lib/components/tag";
 import Icon from "react-bulma-components/lib/components/icon";
 import Level from "react-bulma-components/lib/components/level";
@@ -20,7 +21,7 @@ class ConcertListHeader extends Component {
   renderTitle() {
     return (
       <Heading>
-        Shows{" "}
+        <Translate value="concerts.title" />{" "}
         <Tag color="primary" size="large">
           {this.props.concertCount}
         </Tag>

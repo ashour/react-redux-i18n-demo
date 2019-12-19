@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Localize } from "react-redux-i18n";
+import Box from "react-bulma-components/lib/components/box";
 import Media from "react-bulma-components/lib/components/media";
 import Image from "react-bulma-components/lib/components/image";
 import Content from "react-bulma-components/lib/components/content";
-import Box from "react-bulma-components/lib/components/box";
 
 function CommentCard(props) {
   const { profileImageUrl, userName, commentedOn, text } = props.comment;
@@ -18,7 +19,10 @@ function CommentCard(props) {
         <Media.Item>
           <Content>
             <p>
-              <strong>{userName}</strong> <small>{commentedOn}</small>
+              <strong>{userName}</strong>{" "}
+              <small>
+                <Localize value={commentedOn} dateFormat="date.short" />
+              </small>
               <br />
               {text}
             </p>

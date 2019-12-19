@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Localize } from "react-redux-i18n";
+import Tag from "react-bulma-components/lib/components/tag";
 import Card from "react-bulma-components/lib/components/card";
 import Media from "react-bulma-components/lib/components/media";
 import Content from "react-bulma-components/lib/components/content";
@@ -16,7 +18,9 @@ function ConcertCard(props) {
             <Heading size={4}>{title}</Heading>
 
             <Heading subtitle size={6}>
-              <span>Happening</span> {occursOn}
+              <Tag color="primary">
+                <Localize value={occursOn} dateFormat="date.long" />
+              </Tag>
             </Heading>
           </Media.Item>
         </Media>
