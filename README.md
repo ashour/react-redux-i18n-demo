@@ -1,3 +1,10 @@
+## Demo App for Phrase Blog React Redux i18n Article
+
+This is a companion demo app for a [Phrase blog](https://phrase.com/blog)
+article.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
