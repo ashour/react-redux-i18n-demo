@@ -1,18 +1,18 @@
-import React from 'react';
-import AppBar from './Layout/AppBar';
-import AppFooter from './Layout/AppFooter';
-import ConcertList from './Concerts/ConcertList';
+import React from "react";
+import AppBar from "./Layout/AppBar";
+import AppFooter from "./Layout/AppFooter";
+import ConcertList from "./Concerts/ConcertList";
 
 function App() {
-	return (
-		<>
-			<AppBar />
+  return (
+    <>
+      <AppBar />
 
-			<ConcertList />
+      <ConcertList />
 
-			<AppFooter />
-		</>
-	);
+      <AppFooter />
+    </>
+  );
 }
 
 export default App;
