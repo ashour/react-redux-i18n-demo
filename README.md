@@ -1,4 +1,4 @@
-**⚠️ This repo is no longer maintained! Please visit https://github.com/PhraseApp-Blog/react-redux-i18n-demo/tree/start for the up-to-date repo.**
+**⚠️ This repo is no longer maintained! Please visit https://github.com/PhraseApp-Blog/react-redux-i18n-demo/ for the up-to-date repo.**
 
 ---
 
