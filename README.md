@@ -1,3 +1,7 @@
+**⚠️ This repo is no longer maintained! Please visit https://github.com/PhraseApp-Blog/react-redux-i18n-demo/tree/start for the up-to-date repo.**
+
+---
+
 ## [Starter] Demo App for Phrase Blog React Redux i18n Article
 
 This is a companion demo app for a [Phrase blog](https://phrase.com/blog)
